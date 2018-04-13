@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import "./App.css";
 import Homepage from "../Homepage/Homepage";
-import Footer from "../Footer/Footer";
+import FooterParent from "../FooterParent/FooterParent";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            homePage: {
+                headerBackgroundImage: "/hal.jpg"
+            }
+        };
+    }
+
   render() {
     return (
       <div className="App">
-        <Homepage />
-        <Footer />
+        <Homepage options={this.state.homePage} />
+        <FooterParent />
       </div>
     );
   }

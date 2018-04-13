@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Footer.css";
+import "./FooterParent.css";
 
-class Footer extends Component {
+class FooterParent extends Component {
   render() {
     return <div>This is a footer</div>;
   }
 }
 
-export default Footer;
+export default FooterParent;
