@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "./Homepage.css";
-import Header from "../Header/Header";
+import HeaderParent from "../HeaderParent";
 
 class Homepage extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <HeaderParent
+          backgroundImage={this.props.options.headerBackgroundImage}
+        />
         Hello, is it me you're looking for?
       </div>
     );

@@ -5,10 +5,14 @@ class HeaderParent extends Component {
   render() {
     return (
       <div
-        className="header"
+        className="Header-parent"
         style={{ backgroundImage: `url(${this.props.backgroundImage})` }}
       >
-        This is a header
+        <div className="logo" />
+        <div
+          className="Header-nav"
+          style={{ lineHeight: "64px", float: "right" }}
+        />
       </div>
     );
   }
