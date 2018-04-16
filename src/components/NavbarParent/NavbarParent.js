@@ -13,15 +13,28 @@ import WebsiteTitle from "../WebsiteTitle";
 class NavbarParent extends Component {
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
+    this.toggle = this.toggle.bind(this);
+    this.getNavLinkList = this.getNavLinkList.bind(this);
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
+    });
+  }
+
+  getNavLinkList() {
+    return this.props.data.map(navLink => {
+      return (
+        <NavItem>
+          <NavLink href={navLink.href} disabled={navLink.disabled}>
+            {navLink.label}
+          </NavLink>
+        </NavItem>
+      );
     });
   }
 
@@ -32,29 +45,7 @@ class NavbarParent extends Component {
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/">HOME</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                PORTFOLIO
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                BLOG
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                DJ
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                ABOUT
-              </NavLink>
-            </NavItem>
+            {this.getNavLinkList()}
           </Nav>
         </Collapse>
       </Navbar>

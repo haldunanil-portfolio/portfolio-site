@@ -8,11 +8,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      nav: [
+        {
+          label: "Home",
+          href: "/",
+          disabled: false
+        },
+        {
+          label: "Portfolio",
+          href: "#",
+          disabled: true
+        },
+        {
+          label: "Blog",
+          href: "#",
+          disabled: true
+        },
+        {
+          label: "DJ",
+          href: "#",
+          disabled: true
+        },
+        {
+          label: "About",
+          href: "#",
+          disabled: true
+        }
+      ],
       homePage: {
         headerBgImg: "/hal.jpg",
         headerByline: "Who am I and why are you on this website?",
         headerHeadline: "HELLO, IS IT ME YOU'RE LOOKING FOR?",
-        headerCallToAction: "Call to action"
+        headerCallToAction: "CALL TO ACTION",
+        headerCallToActionHref: "/"
       }
     };
   }
@@ -20,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavbarParent />
+        <NavbarParent data={this.state.nav} />
         <Homepage options={this.state.homePage} />
         <FooterParent />
       </div>
