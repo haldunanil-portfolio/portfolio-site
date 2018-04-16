@@ -3,7 +3,13 @@ import "./FooterParent.css";
 
 class FooterParent extends Component {
   render() {
-    return <div>This is a footer</div>;
+    return (
+      <footer className="footer">
+        <div className="container">
+          Place sticky footer content here.
+        </div>
+      </footer>
+    );
   }
 }
 

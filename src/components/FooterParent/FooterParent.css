@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  line-height: 100px; /* Vertically center the text there */
+  background-color: #E22F37;
+  color: #fffffa;
+  font-family: 'Cabin', sans-serif;
+}
