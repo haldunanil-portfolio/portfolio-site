@@ -50,7 +50,7 @@ class App extends Component {
       <div className="App">
         <NavbarParent data={this.state.nav} />
         <Homepage options={this.state.homePage} />
-        <FooterParent />
+        <FooterParent data={this.state.nav} />
       </div>
     );
   }
