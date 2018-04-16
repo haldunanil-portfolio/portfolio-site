@@ -7,9 +7,11 @@ class Homepage extends Component {
     return (
       <div>
         <HeaderParent
-          backgroundImage={this.props.options.headerBackgroundImage}
+          backgroundImage={this.props.options.headerBgImg}
+          byline={this.props.options.headerByline}
+          headline={this.props.options.headerHeadline}
+          callToAction={this.props.options.headerCallToAction}
         />
-        Hello, is it me you're looking for?
       </div>
     );
   }
