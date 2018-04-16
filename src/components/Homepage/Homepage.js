@@ -11,6 +11,7 @@ class Homepage extends Component {
           byline={this.props.options.headerByline}
           headline={this.props.options.headerHeadline}
           callToAction={this.props.options.headerCallToAction}
+          href={this.props.options.headerCallToActionHref}
         />
       </div>
     );

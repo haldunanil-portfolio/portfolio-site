@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./HeaderParent.css";
-import { Button } from "reactstrap";
+import CallToAction from "../CallToAction";
 
 class HeaderParent extends Component {
   render() {
@@ -9,11 +9,11 @@ class HeaderParent extends Component {
         className="Header-parent"
         style={{ backgroundImage: `url(${this.props.backgroundImage})` }}
       >
-        <div className="Header-content">
+        <div className="Header-content container">
           <span>{this.props.byline}</span>
           <h1>{this.props.headline}</h1>
           <br />
-          <Button color="primary">{this.props.callToAction}</Button>
+          {this.props.href ? <CallToAction href={this.props.href}>{this.props.callToAction}</CallToAction> : null}
         </div>
       </div>
     );
