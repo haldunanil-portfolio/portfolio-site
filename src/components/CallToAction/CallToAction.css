@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin");
 
-button.btn.btn-primary {
+button.btn.Primary-cta {
   font-family: "Cabin", sans-serif;
   font-size: 1.5rem;
   background-color: #2b9eb3;
@@ -10,7 +10,7 @@ button.btn.btn-primary {
   box-shadow: 2px 2px 5px grey;
 }
 
-button.btn.btn-primary:hover {
+button.btn.Primary-cta:hover {
   background-color: #2990a5;
   border: #2990a5;
 }

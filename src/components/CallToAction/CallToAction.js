@@ -6,7 +6,7 @@ class CallToAction extends Component {
   render() {
     return (
       <a href={this.props.href}>
-        <Button color="primary">{this.props.children}</Button>
+        <Button className="Primary-cta">{this.props.children}</Button>
       </a>
     );
   }
