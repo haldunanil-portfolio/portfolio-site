@@ -52,8 +52,9 @@ class App extends Component {
       homePage: {
         header: {
           backgroundImage: "/hal2.jpg",
-          byline: "I'm a passionate software developer by day and an energetic DJ by night. I also love to travel!",
-          headline: "HELLO, IS IT ME YOU'RE LOOKING FOR?",
+          byline:
+            "I'm a passionate software developer by day and an energetic DJ by night. I also love to travel!",
+          headline: "HELLO, IS IT ME YOU'RE LOOKING FOR?"
           // callToAction: "CALL TO ACTION",
           // callToActionHref: "/"
         },
@@ -66,14 +67,27 @@ class App extends Component {
           header: "Some picks from my web development portfolio",
           projects: [
             {
+              imageSrc: "/homepage-screenshot.png",
+              imageAlt: "Portfolio website screenshot",
+              title: "This website!",
+              text:
+                "I wanted to create a gateway into the rest of my portfolio that was simple to navigate and fun to use. This is the website you're currently viewing. Built with React.js.\n" +
+                "Currently under construction, check back frequently for updates!",
+              button: {
+                text: "View Wireframes",
+                href: "/haldunanil-portfolio-wireframe.pdf"
+              }
+            },
+            {
               imageSrc: "/minesweeper-screenshot.png",
               imageAlt: "Minesweeper game screenshot",
               title: "MinesweepeReact",
               text:
                 "A fresh take on an old classic: play Minesweeper online! Built with React.js.",
-              buttonText: "View Project",
-              buttonHref:
-                "https://haldunanil-portfolio.github.io/minesweepereact/"
+              button: {
+                text: "View Project",
+                href: "https://haldunanil-portfolio.github.io/minesweepereact/"
+              }
             },
             {
               imageSrc: "/jammming-screenshot.png",
@@ -81,21 +95,14 @@ class App extends Component {
               title: "Jammming",
               text:
                 "Built on top of the Spotify Developer SDK, Jammming allows a user to discover new music, listen, and create new playlists through an easy-to-use interface. Built with React.js,",
-              buttonText: "View Project",
-              buttonHref: "https://haldunanil-portfolio.github.io/jammming/"
-            },
-            {
-              imageSrc: "/ravenous-screenshot.png",
-              imageAlt: "Ravenous app screenshot",
-              title: "Ravenous",
-              text:
-                "A simplified clone of Yelp, use Ravenous whenever you're feeling... well, ravenous! Built with React.js.",
-              buttonText: "View Project",
-              buttonHref: "https://haldunanil-portfolio.github.io/ravenous/"
+              button: {
+                text: "View Project",
+                href: "https://haldunanil-portfolio.github.io/jammming/"
+              }
             }
           ],
           callToAction: "EXPERIENCE MORE",
-          callToActionHref: "/"
+          callToActionHref: "https://www.github.com/haldunanil-portfolio/"
         },
         blogSection: {
           header: "Read some of my latest blog posts"
@@ -114,7 +121,9 @@ class App extends Component {
   }
 
   componentWillMount() {
-    Instagram.scrapeMyFeed(this.state.homePage.instagramSection.callToActionHref).then(response => {
+    Instagram.scrapeMyFeed(
+      this.state.homePage.instagramSection.callToActionHref
+    ).then(response => {
       let homePage = this.state.homePage;
       homePage.instagramSection.images = response;
       this.setState({ homePage: homePage });

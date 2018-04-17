@@ -25,8 +25,8 @@ class PortfolioSection extends Component {
           <CardImgOverlay>
             <CardTitle>{card.title}</CardTitle>
             <CardText>{card.text}</CardText>
-            <a href={card.buttonHref}>
-              <Button color="primary">{card.buttonText}</Button>
+            <a href={card.button.href}>
+              <Button color="primary">{card.button.text}</Button>
             </a>
             <CardText>
               <small className="text-muted">Posted on 3 mins ago</small>
