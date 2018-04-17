@@ -26,7 +26,7 @@ class FooterParent extends Component {
 
   render() {
     return (
-      <footer className="footer">
+      <footer className="footer" style={{ background: this.props.settings.accentBackgroundColor }}>
         <div className="container Footer-content">
           <h2 className="Footer-header">Let's create something awesome together!</h2>
           <ul className="Footer-nav">{this.getNavLinkList()}</ul>
