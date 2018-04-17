@@ -39,7 +39,7 @@ class FooterParent extends Component {
             Let's create something awesome together!
           </h2>
           <ul className="Footer-nav">{this.getNavLinkList()}</ul>
-          <p>© 2018 Haldun Anil. All rights reserved.</p>
+          <p style={{ fontSize: "0.75rem" }}>© 2018 Haldun Anil. All rights reserved. Made with 💛️ in NYC using React.js.</p>
           <ul className="Footer-nav">
             <a
               href="https://www.facebook.com/pyrmusic"
