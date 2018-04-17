@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Homepage.css";
 import HeaderParent from "../HeaderParent";
 import Section from "../Section";
+import PortfolioSection from "../PortfolioSection";
+import InstagramSection from "../InstagramSection";
 import { Container } from "reactstrap";
 
 class Homepage extends Component {
@@ -25,24 +27,27 @@ class Homepage extends Component {
         </Section>
         <Section
           header={this.props.data.webDevelopmentSection.header}
-          data={this.props.data.webDevelopmentSection.projects}
           callToAction={this.props.data.webDevelopmentSection.callToAction}
           href={this.props.data.webDevelopmentSection.callToActionHref}
-        />
+        >
+          <PortfolioSection data={this.props.data.webDevelopmentSection.projects} />
+        </Section>
         <Section
           header="Read some of my latest blog posts"
           backgroundColor={this.props.settings.secondaryBackgroundColor}
         >
           This section is under construction, check back later!
         </Section>
-        <Section header="Listen to my latest DJ sets">
+        <Section header="Listen to my latest DJ sets" id="Dj-section">
           This section is under construction, check back later!
         </Section>
         <Section
-          header="See what a day in my life looks like"
+          header={this.props.data.instagramSection.header}
+          callToAction={this.props.data.instagramSection.callToAction}
+          href={this.props.data.instagramSection.callToActionHref}
           backgroundColor={this.props.settings.secondaryBackgroundColor}
         >
-          This section is under construction, check back later!
+          <InstagramSection data={this.props.data.instagramSection.images} />
         </Section>
       </div>
     );
