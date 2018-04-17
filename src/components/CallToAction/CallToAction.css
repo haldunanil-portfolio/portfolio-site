@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin");
 
 button.btn.Primary-cta {
+  margin-top: 20px;
   font-family: "Cabin", sans-serif;
   font-size: 1.5rem;
   background-color: #2b9eb3;
