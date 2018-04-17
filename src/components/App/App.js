@@ -52,10 +52,10 @@ class App extends Component {
       homePage: {
         header: {
           backgroundImage: "/hal2.jpg",
-          byline: "Who am I and why are you on this website?",
+          byline: "I'm a passionate software developer by day and an energetic DJ by night. I also love to travel!",
           headline: "HELLO, IS IT ME YOU'RE LOOKING FOR?",
-          callToAction: "CALL TO ACTION",
-          callToActionHref: "/"
+          // callToAction: "CALL TO ACTION",
+          // callToActionHref: "/"
         },
         aboutMeSection: {
           header: "About me",
@@ -101,7 +101,7 @@ class App extends Component {
           header: "Read some of my latest blog posts"
         },
         djSection: {
-          header: "Listen to my latest DJ sets"
+          header: "Listen to my latest DJ sets, remixes, mashups, and more"
         },
         instagramSection: {
           header: "See what a day in my life looks like",
