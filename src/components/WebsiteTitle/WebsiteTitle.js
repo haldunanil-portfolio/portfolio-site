@@ -5,7 +5,7 @@ import { NavbarBrand } from "reactstrap";
 class WebsiteTitle extends Component {
   render() {
     return (
-      <NavbarBrand id="Navbar-brand" href="/">
+      <NavbarBrand style={{ color: this.props.color }} id="Navbar-brand" href="/">
         Haldun Anil
       </NavbarBrand>
     );
