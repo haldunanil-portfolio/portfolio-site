@@ -18,7 +18,6 @@ class NavbarParent extends Component {
       isTop: true,
       navbarBackground: "transparent",
       navTextColor: "#ffffff",
-      navbarShadow: "none"
     };
     this.handleStyleChange = this.handleStyleChange.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -30,13 +29,11 @@ class NavbarParent extends Component {
       this.setState({
         navbarBackground: "transparent",
         navTextColor: "#ffffff",
-        navbarShadow: "none"
       });
     } else {
       this.setState({
-        navbarBackground: "#ffffff",
+        navbarBackground: "rgb(51, 51, 51, 0.15)",
         navTextColor: "#2D2C2D",
-        navbarShadow: "0px 2px 5px grey"
       });
     }
   }
@@ -52,7 +49,7 @@ class NavbarParent extends Component {
 
   componentDidMount() {
     document.addEventListener("scroll", () => {
-      const isTop = window.scrollY < 100;
+      const isTop = window.scrollY < 550;
       if (isTop !== this.state.isTop) {
         this.setState({ isTop });
 
@@ -84,10 +81,7 @@ class NavbarParent extends Component {
         fixed="top"
         expand="md"
         style={{
-          background: this.state.navbarBackground,
-          WebkitBoxShadow: this.state.navbarShadow,
-          MozBoxShadow: this.state.navbarShadow,
-          boxShadow: this.state.navbarShadow
+          background: this.state.navbarBackground
         }}
       >
         <WebsiteTitle color={this.state.navTextColor} />
