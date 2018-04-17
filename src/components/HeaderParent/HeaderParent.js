@@ -12,7 +12,6 @@ class HeaderParent extends Component {
         <div className="Header-content container">
           <span>{this.props.byline}</span>
           <h1>{this.props.headline}</h1>
-          <br />
           {this.props.href ? <CallToAction href={this.props.href}>{this.props.callToAction}</CallToAction> : null}
         </div>
       </div>
