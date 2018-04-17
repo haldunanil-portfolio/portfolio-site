@@ -18,9 +18,9 @@ class PortfolioSection extends Component {
   }
 
   getCardDeck() {
-    return this.props.data.map(card => {
+    return this.props.data.map((card, i) => {
       return (
-        <Card inverse>
+        <Card key={"card_" + i} inverse>
           <CardImg src={card.imageSrc} alt={card.imageAlt} />
           <CardImgOverlay>
             <CardTitle>{card.title}</CardTitle>

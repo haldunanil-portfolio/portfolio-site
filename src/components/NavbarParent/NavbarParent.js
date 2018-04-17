@@ -63,9 +63,9 @@ class NavbarParent extends Component {
   }
 
   getNavLinkList() {
-    return this.props.data.map(navLink => {
+    return this.props.data.map((navLink, i) => {
       return (
-        <NavItem>
+        <NavItem key={"navItem_" + i}>
           <NavLink
             href={navLink.href}
             disabled={navLink.disabled}

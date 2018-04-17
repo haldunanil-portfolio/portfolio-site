@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import "./InstagramSection.css";
 import {
   Card,
-  Button,
   CardImgOverlay,
   CardImg,
-  CardTitle,
   CardText,
   CardDeck,
   Container
@@ -46,9 +44,9 @@ class InstagramSection extends Component {
   }
 
   getCardDeck(startIndex, endIndex) {
-    return this.props.data.slice(startIndex, endIndex).map(card => {
+    return this.props.data.slice(startIndex, endIndex).map((card, i) => {
       return (
-        <Card inverse>
+        <Card key={"card_" + i} inverse>
           <CardImg src={card.imageSrc} alt={card.imageAlt} />
           <CardImgOverlay>
             <CardText>{card.imageCaption}</CardText>
