@@ -47,7 +47,7 @@ class InstagramSection extends Component {
     return this.props.data.slice(startIndex, endIndex).map((card, i) => {
       return (
         <Card key={"card_" + i} inverse>
-          <CardImg src={card.imageSrc} alt={card.imageAlt} />
+          <CardImg src={card.imageSrc} alt={card.imageCaption} />
           <CardImgOverlay>
             <CardText>{card.imageCaption}</CardText>
             <CardText>
