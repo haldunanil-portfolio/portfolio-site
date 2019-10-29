@@ -45,6 +45,7 @@ html {
   /* Set the fixed height of the footer here */
   color: #ffffff;
   font-family: "Cabin", sans-serif;
+  overflow: auto;
 }
 
 div.Footer-content {
