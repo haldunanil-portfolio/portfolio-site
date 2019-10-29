@@ -1,0 +1,13 @@
+#gatsby-noscript {
+  position: absolute;
+  top: 48px;
+  color: white;
+  left: 16px;
+}
+
+@media (min-width: 576px) {
+  #gatsby-noscript {
+    top: 24px;
+    left: 175px;
+  }
+}
