@@ -114,7 +114,7 @@ class FooterParent extends Component<FooterParentProps> {
     return (
       <Footer>
         <FooterContent className="container">
-          <FooterHeader>Let`&apos;`s create something awesome together!</FooterHeader>
+          <FooterHeader>Let&apos;s create something awesome together!</FooterHeader>
           <FooterNav>{this.getNavLinkList()}</FooterNav>
           <Copyright>
             <span>© 2019 Haldun Anil. All rights reserved. Made with </span>

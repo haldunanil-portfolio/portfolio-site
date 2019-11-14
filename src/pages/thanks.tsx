@@ -11,7 +11,7 @@ const NotFoundPage = () => (
     <SEO title="Thanks" />
     <Container style={{ marginTop: 100 }}>
       <Header>Thanks!</Header>
-      <Text>Thanks for your submission, I`&apos;`ll be in touch soon!</Text>
+      <Text>Thanks for your submission, I&apos;ll be in touch soon!</Text>
     </Container>
   </Layout>
 );

@@ -60,7 +60,7 @@ class About extends Component<AboutProps> {
             </Col>
             <Col xs={12} md={6}>
               <Header size={2}>Drop me a line!</Header>
-              <Text>Fill in the fields below and I`&apos;`ll get back to you.</Text>
+              <Text>Fill in the fields below and I&apos;ll get back to you.</Text>
 
               <Formik
                 initialValues={{ name: "", email: "", details: "" }}
@@ -81,7 +81,7 @@ class About extends Component<AboutProps> {
                       name="bot-field"
                       placeholder="This is a honeypot!"
                     >
-                      Don`&apos;`t fill this out
+                      Don&apos;t fill this out
                     </FormField>
                     <FormField
                       feedback={errors.name}

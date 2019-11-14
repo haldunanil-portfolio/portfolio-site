@@ -31,7 +31,7 @@ const NotFoundPage = () => (
     <Flex>
       <Header>Not found :(</Header>
       <p>
-        This page sadly does not exist. Here`&apos;`s a cute video of corgi
+        This page sadly does not exist. Here&apos;s a cute video of corgi
         puppies to cheer you up:
       </p>
       <iframe
