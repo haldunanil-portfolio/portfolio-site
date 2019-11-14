@@ -11,7 +11,9 @@ import {
 } from "reactstrap";
 import styled, { css } from "styled-components";
 
-import { color, font, spacing, Color } from "../../styles/utils";
+import {
+  color, font, spacing, Color
+} from "../../styles/utils";
 
 export interface NavbarBrandProps extends React.HTMLAttributes<HTMLDivElement> {
   color?: Color;
@@ -21,6 +23,13 @@ export interface NavbarBrandProps extends React.HTMLAttributes<HTMLDivElement> {
 export interface NavbarParentProps {
   data?: NavLinkProps;
   defaultIsTop?: boolean;
+}
+
+interface NavbarParentState {
+  isOpen: boolean;
+  isTop: boolean;
+  navbarBackground: string;
+  navTextColor: string;
 }
 
 const Navbar = styled(RstrapNavbar)`
@@ -43,14 +52,13 @@ const NavbarBrand = styled.div<NavbarBrandProps>`
 const NavbarToggler = styled(({ togglerStatus, ...props }) => (
   <RstrapNavbarToggler {...props} />
 ))`
-  ${props =>
-    props.togglerStatus === "active"
-      ? css`
+  ${props => (props.togglerStatus === "active"
+    ? css`
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#222' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
         `
-      : css`
+    : css`
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-        `};
+        `)};
 `;
 
 const NavLink = styled(RstrapNavLink)`
@@ -65,24 +73,18 @@ const NavLink = styled(RstrapNavLink)`
 
 const externalRe = /http[s]:\/\/.*/;
 
-class NavbarParent extends Component<NavbarParentProps> {
+class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
   public static defaultProps: NavbarParentProps = {
     defaultIsTop: false
   };
 
-  public readonly state = {
-    isOpen: false,
-    isTop: this.props.defaultIsTop,
-    navbarBackground: "transparent",
-    navTextColor: "#ffffff"
-  };
-
-  getNavLinkList = () => {
+  private getNavLinkList = () => {
     const { data } = this.props;
+    const { navTextColor } = this.state;
 
     return (
-      data &&
-      data.map((navLink: NavLinkProps) => {
+      data
+      && data.map((navLink: NavLinkProps) => {
         const external = externalRe.test(navLink.href as string);
         let navProps = {};
 
@@ -108,7 +110,7 @@ class NavbarParent extends Component<NavbarParentProps> {
               {...navProps}
               disabled={navLink.disabled}
               style={{
-                color: navLink.disabled ? null : this.state.navTextColor
+                color: navLink.disabled ? null : navTextColor
               }}
             >
               {navLink.label}
@@ -119,7 +121,7 @@ class NavbarParent extends Component<NavbarParentProps> {
     );
   };
 
-  handleStyleChange = (condition: boolean) => {
+  private handleStyleChange = (condition: boolean) => {
     if (condition) {
       this.setState({
         navbarBackground: "transparent",
@@ -133,31 +135,45 @@ class NavbarParent extends Component<NavbarParentProps> {
     }
   };
 
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  private toggle = () => {
+    const { isOpen } = this.state;
+
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
 
     // change styles as appropriate
-    this.handleStyleChange(this.state.isOpen);
+    this.handleStyleChange(isOpen);
   };
 
-  componentDidMount() {
-    this.handleStyleChange(this.state.isTop as boolean);
+  public readonly state: NavbarParentState = {
+    isOpen: false,
+    // eslint-disable-next-line react/destructuring-assignment
+    isTop: this.props.defaultIsTop as boolean,
+    navbarBackground: "transparent",
+    navTextColor: "#ffffff"
+  };
+
+  public componentDidMount() {
+    const { isTop } = this.state;
+
+    this.handleStyleChange(isTop as boolean);
 
     document.addEventListener("scroll", () => {
-      const isTop = window.scrollY < 500;
-      if (isTop !== this.state.isTop) {
+      const newIsTop = window.scrollY < 500;
+      if (newIsTop !== isTop) {
         this.setState({ isTop });
 
         // change styles as appropriate
-        this.handleStyleChange(this.state.isTop as boolean);
+        this.handleStyleChange(isTop as boolean);
       }
     });
   }
 
   render() {
-    const { isOpen, isTop, navbarBackground, navTextColor } = this.state;
+    const {
+      isOpen, isTop, navbarBackground, navTextColor
+    } = this.state;
 
     // initialize togglerStatus element to decide color
     let togglerStatus;

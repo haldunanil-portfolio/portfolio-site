@@ -18,6 +18,7 @@ export interface CardButtonProps {
 }
 
 export interface CardProps {
+  id: number;
   imageAlt?: string;
   imageSrc?: string;
   title?: string;
@@ -72,15 +73,19 @@ class PortfolioSection extends Component<PortfolioSectionProps> {
     const { data } = this.props;
 
     return (
-      data &&
-      data.map((card, i) => {
+      data
+      && data.map(card => {
         return (
-          <Card key={"card_" + i} inverse>
+          <Card key={`card_${card.id}`} inverse>
             <CardImg src={card.imageSrc} alt={card.imageAlt} />
             <CardImgOverlay>
               <CardTitle>{card.title}</CardTitle>
               <CardText>{card.text}</CardText>
-              <a href={card.button.href} target="_blank">
+              <a
+                href={card.button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button>{card.button.text}</Button>
               </a>
             </CardImgOverlay>

@@ -4,13 +4,13 @@ import { Container, Row, Col } from "reactstrap";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 
+import { navigate } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Text from "../components/Text";
 import Button from "../components/Button";
 import FormField from "../components/FormField";
-import { navigate } from "gatsby";
 
 export interface AboutProps {}
 
@@ -31,14 +31,12 @@ const ContactSchema = Yup.object().shape({
 
 const encode = (data: any) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join("&");
 };
 
 class About extends Component<AboutProps> {
-  private handleSubmit = (values: any, actions: any) => {
-    console.log(values);
-
+  private handleSubmit = (values: any) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -62,7 +60,7 @@ class About extends Component<AboutProps> {
             </Col>
             <Col xs={12} md={6}>
               <Header size={2}>Drop me a line!</Header>
-              <Text>Fill in the fields below and I'll get back to you.</Text>
+              <Text>Fill in the fields below and I`&apos;`ll get back to you.</Text>
 
               <Formik
                 initialValues={{ name: "", email: "", details: "" }}
@@ -83,7 +81,7 @@ class About extends Component<AboutProps> {
                       name="bot-field"
                       placeholder="This is a honeypot!"
                     >
-                      Don't fill this out
+                      Don`&apos;`t fill this out
                     </FormField>
                     <FormField
                       feedback={errors.name}

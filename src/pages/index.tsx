@@ -12,18 +12,20 @@ import AlternatingSections from "../components/AlternatingSections";
 
 const projects = [
   {
+    id: 1,
     imageSrc: "/homepage-screenshot.png",
     imageAlt: "Portfolio website screenshot",
     title: "This website!",
     text:
-      "I wanted to create a gateway into the rest of my portfolio that was simple to navigate and fun to use. This is the website you're currently viewing. Built with React.js.\n" +
-      "Currently under construction, check back frequently for updates!",
+      "I wanted to create a gateway into the rest of my portfolio that was simple to navigate and fun to use. This is the website you're currently viewing. Built with React.js.\n"
+      + "Currently under construction, check back frequently for updates!",
     button: {
       text: "View Wireframes",
       href: "/haldunanil-portfolio-wireframe.pdf"
     }
   },
   {
+    id: 2,
     imageSrc: "/minesweeper-screenshot.png",
     imageAlt: "Minesweeper game screenshot",
     title: "MinesweepeReact",
@@ -35,6 +37,7 @@ const projects = [
     }
   },
   {
+    id: 3,
     imageSrc: "/jammming-screenshot.png",
     imageAlt: "Jammming app screenshot",
     title: "Jammming",

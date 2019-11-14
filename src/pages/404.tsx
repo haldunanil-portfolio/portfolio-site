@@ -31,18 +31,19 @@ const NotFoundPage = () => (
     <Flex>
       <Header>Not found :(</Header>
       <p>
-        This page sadly does not exist. Here's a cute video of corgi puppies to
-        cheer you up:
+        This page sadly does not exist. Here`&apos;`s a cute video of corgi
+        puppies to cheer you up:
       </p>
       <iframe
+        title="youtube-404-corgis"
         width="560"
         height="315"
         src="https://www.youtube.com/embed/uglsVqR88l4"
         // @ts-ignore
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         // @ts-ignore
-        allowfullscreen
+        allowFullScreen
       />
     </Flex>
   </Layout>

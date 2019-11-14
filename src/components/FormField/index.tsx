@@ -32,7 +32,6 @@ const FormField: React.SFC<FormFieldProps> = ({
   hidden,
   id,
   invalid,
-  label,
   ...props
 }: FormFieldProps) => {
   return (
