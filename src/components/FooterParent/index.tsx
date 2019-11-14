@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import { FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import { color, font } from "../../styles/utils";
+import { Link } from "gatsby";
 
 export interface FooterNavLinkProps
   extends React.HTMLAttributes<HTMLAnchorElement> {
@@ -25,6 +26,7 @@ const Footer = styled.footer`
   font-family: ${font("heading")};
   overflow: auto;
   background-color: ${color("danger", 5)};
+  text-align: center;
 
   @media (max-width: 332px) {
     height: 275px;
@@ -51,7 +53,7 @@ const FooterNav = styled.ul`
   padding: 0;
 `;
 
-const FooterNavLink = styled.a<FooterNavLinkProps>`
+const FooterNavLink = styled.a<FooterNavLinkProps & { to?: string }>`
   text-decoration: none;
   color: ${color("gray", 0)};
   transition: 0.25s;
@@ -152,7 +154,7 @@ class FooterParent extends Component<FooterParentProps> {
                 <FaInstagram />
               </FooterNavItem>
             </FooterNavLink>
-            <FooterNavLink>
+            <FooterNavLink as={Link} to="/about">
               <FooterNavItem>
                 <GoMail />
               </FooterNavItem>

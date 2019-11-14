@@ -45,8 +45,8 @@ const nav = [
   },
   {
     label: "About",
-    href: "#",
-    disabled: true,
+    href: "/about",
+    disabled: false,
     hover: false
   }
 ];
