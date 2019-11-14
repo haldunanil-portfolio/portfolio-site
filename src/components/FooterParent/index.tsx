@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 
-import { FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaYoutube,
+  FaInstagram,
+  FaTwitter,
+  FaGithub
+} from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import { color, font } from "../../styles/utils";
 import { Link } from "gatsby";
@@ -137,6 +144,15 @@ class FooterParent extends Component<FooterParentProps> {
               </FooterNavItem>
             </FooterNavLink>
             <FooterNavLink
+              href="https://www.github.com/haldunanil"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterNavItem>
+                <FaGithub />
+              </FooterNavItem>
+            </FooterNavLink>
+            <FooterNavLink
               href="https://www.youtube.com/channel/UC__u0LCq0eEUhjpFMIA6EZg/featured"
               target="_blank"
               rel="noopener noreferrer"
@@ -152,6 +168,15 @@ class FooterParent extends Component<FooterParentProps> {
             >
               <FooterNavItem>
                 <FaInstagram />
+              </FooterNavItem>
+            </FooterNavLink>
+            <FooterNavLink
+              href="https://www.twitter.com/halsdunes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FooterNavItem>
+                <FaTwitter />
               </FooterNavItem>
             </FooterNavLink>
             <FooterNavLink as={Link} to="/about">
