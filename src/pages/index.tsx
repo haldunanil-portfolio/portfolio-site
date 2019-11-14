@@ -50,7 +50,7 @@ const projects = [
 ];
 
 const Home = () => (
-  <Layout>
+  <Layout defaultIsTop>
     <SEO title="Home" />
     <Hero
       backgroundImage="/hal2.jpg"

@@ -14,7 +14,9 @@ import FooterParent from "../FooterParent";
 
 import theme from "../../styles/theme.json";
 
-export interface LayoutProps extends React.HTMLAttributes<HTMLElement> {}
+export interface LayoutProps extends React.HTMLAttributes<HTMLElement> {
+  defaultIsTop?: boolean;
+}
 
 const nav = [
   {
@@ -49,7 +51,10 @@ const nav = [
   }
 ];
 
-const Layout: React.SFC<LayoutProps> = ({ children }: LayoutProps) => {
+const Layout: React.SFC<LayoutProps> = ({
+  children,
+  defaultIsTop
+}: LayoutProps) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -62,7 +67,7 @@ const Layout: React.SFC<LayoutProps> = ({ children }: LayoutProps) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavbarParent data={nav} />
+      <NavbarParent data={nav} defaultIsTop={defaultIsTop} />
       <main>{children}</main>
       <FooterParent data={nav} />
     </ThemeProvider>

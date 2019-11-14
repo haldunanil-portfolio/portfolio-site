@@ -20,6 +20,7 @@ export interface NavbarBrandProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export interface NavbarParentProps {
   data?: NavLinkProps;
+  defaultIsTop?: boolean;
 }
 
 const Navbar = styled(RstrapNavbar)`
@@ -65,9 +66,13 @@ const NavLink = styled(RstrapNavLink)`
 const externalRe = /http[s]:\/\/.*/;
 
 class NavbarParent extends Component<NavbarParentProps> {
-  state = {
+  public static defaultProps: NavbarParentProps = {
+    defaultIsTop: false
+  };
+
+  public readonly state = {
     isOpen: false,
-    isTop: true,
+    isTop: this.props.defaultIsTop,
     navbarBackground: "transparent",
     navTextColor: "#ffffff"
   };
@@ -138,13 +143,15 @@ class NavbarParent extends Component<NavbarParentProps> {
   };
 
   componentDidMount() {
+    this.handleStyleChange(this.state.isTop as boolean);
+
     document.addEventListener("scroll", () => {
-      const isTop = window.scrollY < 550;
+      const isTop = window.scrollY < 500;
       if (isTop !== this.state.isTop) {
         this.setState({ isTop });
 
         // change styles as appropriate
-        this.handleStyleChange(this.state.isTop);
+        this.handleStyleChange(this.state.isTop as boolean);
       }
     });
   }
@@ -182,7 +189,6 @@ class NavbarParent extends Component<NavbarParentProps> {
         <NavbarBrand as={Link} to="/" color={navTextColor as Color}>
           Haldun Anil
         </NavbarBrand>
-
         <NavbarToggler
           style={{ borderColor: navTextColor }}
           onClick={this.toggle}
