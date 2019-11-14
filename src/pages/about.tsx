@@ -26,7 +26,7 @@ const ContactSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email!")
     .required("Email required!"),
-  details: Yup.string().min(250, "Details too long!")
+  details: Yup.string().max(250, "Details too long!")
 });
 
 const encode = (data: any) => {
@@ -86,28 +86,31 @@ class About extends Component<AboutProps> {
                       Don't fill this out
                     </FormField>
                     <FormField
-                      id="name-field"
-                      name="name"
-                      invalid={touched.name && !!errors.name}
                       feedback={errors.name}
+                      id="name-field"
+                      invalid={touched.name && !!errors.name}
+                      name="name"
+                      placeholder="Tony Stark"
                     >
                       Name
                     </FormField>
                     <FormField
                       id="email-field"
-                      name="email"
-                      type="email"
                       invalid={touched.email && !!errors.email}
                       feedback={errors.email}
+                      name="email"
+                      placeholder="avengers@assemb.le"
+                      type="email"
                     >
                       Email
                     </FormField>
                     <FormField
-                      id="details-field"
-                      name="details"
-                      type="textarea"
-                      invalid={touched.details && !!errors.details}
                       feedback={errors.details}
+                      id="details-field"
+                      invalid={touched.details && !!errors.details}
+                      name="details"
+                      placeholder="Talk to me!"
+                      type="textarea"
                     >
                       Details
                     </FormField>
