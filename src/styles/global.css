@@ -1,13 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin|Raleway|Satisfy&display=swap");
+
+* {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 332px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 275px !important;
+  }
+}
+
+@media (min-width: 333px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 250px !important;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 200px !important;
+  }
+}
+
 #gatsby-noscript {
   position: absolute;
-  top: 48px;
+  top: 3rem;
   color: white;
   left: 16px;
 }
 
 @media (min-width: 576px) {
   #gatsby-noscript {
-    top: 24px;
+    top: 1rem;
     left: 175px;
   }
 }
