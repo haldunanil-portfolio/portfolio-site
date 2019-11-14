@@ -42,7 +42,7 @@ const FormField: React.SFC<FormFieldProps> = ({
       hidden={hidden}
     >
       <Label for={id}>{children}</Label>
-      <Field as={Input} id={id} name={name} invalid={invalid} hidden={hidden} {...props} />
+      <Field as={Input} id={id} invalid={invalid} hidden={hidden} {...props} />
       <FormFeedback invalid={invalid}>{feedback}</FormFeedback>
     </FormGroup>
   );
