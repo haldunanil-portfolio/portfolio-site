@@ -117,7 +117,7 @@ class FooterParent extends Component<FooterParentProps> {
           <FooterHeader>Let&apos;s create something awesome together!</FooterHeader>
           <FooterNav>{this.getNavLinkList()}</FooterNav>
           <Copyright>
-            <span>© 2019 Haldun Anil. All rights reserved. Made with </span>
+            <span>© 2021 Haldun Anil. All rights reserved. Made with </span>
             <span role="img" aria-label="golden heart emoji">
               💛
             </span>
