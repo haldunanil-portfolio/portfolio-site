@@ -113,6 +113,7 @@ class About extends Component<AboutProps> {
                     >
                       Details
                     </FormField>
+                    <div data-netlify-recaptcha="true"></div>
                     <Button
                       style={{ marginTop: "1rem", width: "100%" }}
                       type="submit"
