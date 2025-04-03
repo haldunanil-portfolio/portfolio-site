@@ -7,7 +7,7 @@ import {
   FaYoutube,
   FaInstagram,
   FaTwitter,
-  FaGithub
+  FaGithub,
 } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import { Link } from "gatsby";
@@ -69,8 +69,9 @@ const FooterNavLink = styled.a<FooterNavLinkProps & { to?: string }>`
     color: ${color("primary", 3)};
   }
 
-  ${props => props.disabled
-    && css`
+  ${(props) =>
+    props.disabled &&
+    css`
       &,
       &:hover {
         text-decoration: none;
@@ -95,8 +96,8 @@ class FooterParent extends Component<FooterParentProps> {
     const { data } = this.props;
 
     return (
-      data
-      && data.map(({ href, disabled, label }) => {
+      data &&
+      data.map(({ href, disabled, label }) => {
         return (
           <FooterNavLink
             href={href}
@@ -114,15 +115,19 @@ class FooterParent extends Component<FooterParentProps> {
     return (
       <Footer>
         <FooterContent className="container">
-          <FooterHeader>Let&apos;s create something awesome together!</FooterHeader>
+          <FooterHeader>
+            Let&apos;s create something awesome together!
+          </FooterHeader>
           <FooterNav>{this.getNavLinkList()}</FooterNav>
           <Copyright>
-            <span>© 2021 Haldun Anil. All rights reserved. Made with </span>
+            <span>
+              © {new Date().getFullYear()} Haldun Anil. All rights reserved.
+              Made with{" "}
+            </span>
             <span role="img" aria-label="golden heart emoji">
               💛
             </span>
-            ️
-            <span>in NYC using React.</span>
+            ️<span>in NYC using React.</span>
           </Copyright>
           <FooterNav>
             <FooterNavLink
