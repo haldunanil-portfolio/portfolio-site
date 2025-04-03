@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.3.1",
   "author": "Haldun Anil",
-  "homepage": "https://haldunanil.com",
+  "homepage": "https://www.haldunanil.com",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "babel-plugin-styled-components": "^2.1.4",

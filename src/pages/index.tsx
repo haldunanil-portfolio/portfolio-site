@@ -17,9 +17,8 @@ const projects = [
     imageSrc: withPrefix("/homepage-screenshot.png"),
     imageAlt: "Portfolio website screenshot",
     title: "This website!",
-    text:
-      "I wanted to create a gateway into the rest of my portfolio that was simple to navigate and fun to use. This is the website you're currently viewing. Built with React.js.\n"
-      + "Currently under construction, check back frequently for updates!",
+    text: `I wanted to create a gateway into the rest of my portfolio that was simple to navigate and fun to use. This is the website you're currently viewing. Built with React.js.
+      Currently under construction, check back frequently for updates!`,
     button: {
       text: "View Wireframes",
       href: withPrefix("/haldunanil-portfolio-wireframe.pdf"),
