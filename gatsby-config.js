@@ -4,6 +4,7 @@ module.exports = {
     description: `Personal website and portfolio for Haldun Anil, software developer, DJ / EDM enthusiast, and world traveler.`,
     author: `@halsdunes`,
   },
+  pathPrefix: `/portfolio-site`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

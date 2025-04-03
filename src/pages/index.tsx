@@ -1,4 +1,5 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -13,7 +14,7 @@ import AlternatingSections from "../components/AlternatingSections";
 const projects = [
   {
     id: 1,
-    imageSrc: "/homepage-screenshot.png",
+    imageSrc: withPrefix("/homepage-screenshot.png"),
     imageAlt: "Portfolio website screenshot",
     title: "This website!",
     text:
@@ -21,33 +22,31 @@ const projects = [
       + "Currently under construction, check back frequently for updates!",
     button: {
       text: "View Wireframes",
-      href: "/haldunanil-portfolio-wireframe.pdf"
-    }
+      href: withPrefix("/haldunanil-portfolio-wireframe.pdf"),
+    },
   },
   {
     id: 2,
-    imageSrc: "/minesweeper-screenshot.png",
+    imageSrc: withPrefix("/minesweeper-screenshot.png"),
     imageAlt: "Minesweeper game screenshot",
     title: "MinesweepeReact",
-    text:
-      "A fresh take on an old classic: play Minesweeper online! Built with React.js.",
+    text: "A fresh take on an old classic: play Minesweeper online! Built with React.js.",
     button: {
       text: "View Project",
-      href: "https://haldunanil-portfolio.github.io/minesweepereact/"
-    }
+      href: "https://haldunanil-portfolio.github.io/minesweepereact/",
+    },
   },
   {
     id: 3,
-    imageSrc: "/jammming-screenshot.png",
+    imageSrc: withPrefix("/jammming-screenshot.png"),
     imageAlt: "Jammming app screenshot",
     title: "Jammming",
-    text:
-      "Built on top of the Spotify Developer SDK, Jammming allows a user to discover new music, listen, and create new playlists through an easy-to-use interface. Built with React.js,",
+    text: "Built on top of the Spotify Developer SDK, Jammming allows a user to discover new music, listen, and create new playlists through an easy-to-use interface. Built with React.js,",
     button: {
       text: "View Project",
-      href: "https://haldunanil-portfolio.github.io/jammming/"
-    }
-  }
+      href: "https://haldunanil-portfolio.github.io/jammming/",
+    },
+  },
 ];
 
 function Home() {
@@ -55,7 +54,7 @@ function Home() {
     <Layout defaultIsTop>
       <SEO title="Home" />
       <Hero
-        backgroundImage="/hal2.jpg"
+        backgroundImage={withPrefix("/hal2.jpg")}
         byline="I'm a passionate software developer by day and an energetic DJ by night. I also love to travel!"
         headline="HELLO, IS IT ME YOU'RE LOOKING FOR?"
       />
@@ -65,11 +64,11 @@ function Home() {
           <Text>
             I strongly believe that being true to myself, my passions, and my
             interests is my strongest quality as an individual. I am never
-            satisfied with the status quo and am always thinking about new ways to
-            push the envelope, think creatively about the challenges I face, and
-            dare to do things differently. I am not shy about expressing my
-            opinions and am always on the lookout to do whatever I can to improve
-            the world around me.
+            satisfied with the status quo and am always thinking about new ways
+            to push the envelope, think creatively about the challenges I face,
+            and dare to do things differently. I am not shy about expressing my
+            opinions and am always on the lookout to do whatever I can to
+            improve the world around me.
           </Text>
         </Section>
         <Section>

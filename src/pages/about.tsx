@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 
-import { navigate } from "gatsby";
+import { navigate, withPrefix } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
@@ -35,7 +35,7 @@ const encode = (data: any) => {
 
 class About extends Component<AboutProps> {
   private handleSubmit = (values: any) => {
-    fetch("/", {
+    fetch(withPrefix("/"), {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -43,11 +43,11 @@ class About extends Component<AboutProps> {
         ...values,
       }),
     })
-      .then(() => navigate("/thanks"))
+      .then(() => navigate(withPrefix("/thanks")))
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error("Form submission error:", err);
-        navigate("/404", {
+        navigate(withPrefix("/404"), {
           state: {
             error: "There was an error submitting the form. Please try again.",
           },
@@ -62,7 +62,7 @@ class About extends Component<AboutProps> {
         <Container style={{ marginTop: 100, paddingBottom: 50 }}>
           <Row>
             <Col xs={12} md={6}>
-              <Image src="/hal.jpg" />
+              <Image src={withPrefix("/hal.jpg")} />
             </Col>
             <Col xs={12} md={6}>
               <Header size={2}>Drop me a line!</Header>
