@@ -14,8 +14,8 @@ export const StyledAltneratingSections = styled.div`
   }
 `;
 
-const AlternatingSections: React.SFC<AlternatingSectionsProps> = (
-  props: AlternatingSectionsProps
+const AlternatingSections: React.FC<AlternatingSectionsProps> = (
+  props: AlternatingSectionsProps,
 ) => {
   return <StyledAltneratingSections {...props} />;
 };

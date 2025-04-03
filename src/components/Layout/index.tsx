@@ -23,37 +23,37 @@ const nav = [
     label: "Home",
     href: "/",
     disabled: false,
-    hover: false
+    hover: false,
   },
   {
     label: "Portfolio",
     href: "https://www.github.com/haldunanil-portfolio/",
     disabled: false,
-    hover: false
+    hover: false,
   },
   {
     label: "Blog",
     href: "#",
     disabled: true,
-    hover: false
+    hover: false,
   },
   {
     label: "DJ",
     href: "#",
     disabled: true,
-    hover: false
+    hover: false,
   },
   {
     label: "About",
     href: "/about",
     disabled: false,
-    hover: false
-  }
+    hover: false,
+  },
 ];
 
-const Layout: React.SFC<LayoutProps> = ({
+const Layout: React.FC<LayoutProps> = ({
   children,
-  defaultIsTop
+  defaultIsTop,
 }: LayoutProps) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {

@@ -4,7 +4,7 @@ import {
   Label as RstrapLabel,
   Input as RstrapInput,
   InputProps,
-  FormFeedback as RstrapFormFeedback
+  FormFeedback as RstrapFormFeedback,
 } from "reactstrap";
 import styled from "styled-components";
 import { Field } from "formik";
@@ -25,7 +25,7 @@ const FormFeedback = styled(RstrapFormFeedback)`
   font-family: ${font("body")};
 `;
 
-const FormField: React.SFC<FormFieldProps> = ({
+const FormField: React.FC<FormFieldProps> = ({
   children,
   className,
   feedback,

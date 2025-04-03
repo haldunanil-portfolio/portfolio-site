@@ -7,10 +7,8 @@ import { spacing } from "../../styles/utils";
 
 export interface CallToActionProps
   extends React.HTMLAttributes<HTMLAnchorElement> {
-  /** link to redirect user to when using anchor tag */
+  /** link to redirect user to when using anchor tag or gatsby's 'Link' component */
   href?: string;
-  /** link to redirect user to when using gatsby's 'Link' component */
-  to?: string;
 }
 
 export const StyledCallToAction = styled.a<CallToActionProps>`
@@ -21,9 +19,9 @@ export const StyledCallToAction = styled.a<CallToActionProps>`
 
 const externalRe = /http[s]:\/\/.*/;
 
-const CallToAction: React.SFC<CallToActionProps> = ({
+const CallToAction: React.FC<CallToActionProps> = ({
   children,
-  href
+  href,
 }: CallToActionProps) => {
   const external = externalRe.test(href as string);
 

@@ -1,7 +1,7 @@
 {
   "name": "haldunanil-dot-com",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Haldun Anil",
   "homepage": "https://www.haldunanil.com",
   "dependencies": {

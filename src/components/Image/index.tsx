@@ -13,16 +13,23 @@ import { GatsbyImage } from "gatsby-plugin-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`{
-  placeholderImage: file(relativePath: {eq: "gatsby-astronaut.png"}) {
-    childImageSharp {
-      gatsbyImageData(width: 300, layout: CONSTRAINED)
+function Image() {
+  const data = useStaticQuery(graphql`
+    {
+      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED)
+        }
+      }
     }
-  }
-}`);
+  `);
 
-  return <GatsbyImage image={data.placeholderImage.childImageSharp.gatsbyImageData} />;
-};
+  return (
+    <GatsbyImage
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
+      alt="Gatsby Astronaut"
+    />
+  );
+}
 
 export default Image;

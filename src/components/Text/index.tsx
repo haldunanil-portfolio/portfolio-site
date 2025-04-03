@@ -8,7 +8,7 @@ export const StyledText = styled.span`
   font-family: ${font("body")};
 `;
 
-const Text: React.SFC<TextProps> = (props: TextProps) => {
+const Text: React.FC<TextProps> = (props: TextProps) => {
   return <StyledText {...props} />;
 };
 

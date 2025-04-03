@@ -9,7 +9,13 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "react": ["node_modules/@types/react"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "public", ".cache"]

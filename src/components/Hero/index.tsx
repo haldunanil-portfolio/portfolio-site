@@ -12,7 +12,7 @@ export interface HeroBodyProps extends React.HTMLAttributes<HTMLDivElement> {
   backgroundImage?: BackgroundImage;
 }
 
-export interface HeroParent {
+export interface HeroProps {
   backgroundImage?: BackgroundImage;
   byline?: string;
   callToAction?: string;
@@ -27,7 +27,7 @@ const HeroBody = styled.div<HeroBodyProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(${props => props.backgroundImage});
+  background-image: url(${(props) => props.backgroundImage});
 `;
 
 const HeroContent = styled.div`
@@ -50,13 +50,13 @@ const Subtitle = styled.span`
   font-family: ${font("cursive")};
 `;
 
-const HeroParent: React.SFC<HeroParent> = ({
+const HeroParent: React.FC<HeroProps> = ({
   backgroundImage,
   byline,
   callToAction,
   headline,
-  href
-}: HeroParent) => (
+  href,
+}: HeroProps) => (
   <HeroBody backgroundImage={backgroundImage}>
     <HeroContent className="container">
       <Header>{headline}</Header>

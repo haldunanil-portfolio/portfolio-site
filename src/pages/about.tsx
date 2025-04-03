@@ -23,15 +23,13 @@ const ContactSchema = Yup.object().shape({
     .min(2, "Name too short!")
     .max(50, "Name too long!")
     .required("Name required!"),
-  email: Yup.string()
-    .email("Invalid email!")
-    .required("Email required!"),
-  details: Yup.string().max(250, "Details too long!")
+  email: Yup.string().email("Invalid email!").required("Email required!"),
+  details: Yup.string().max(250, "Details too long!"),
 });
 
 const encode = (data: any) => {
   return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join("&");
 };
 
@@ -42,11 +40,19 @@ class About extends Component<AboutProps> {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...values
-      })
+        ...values,
+      }),
     })
       .then(() => navigate("/thanks"))
-      .catch(err => alert(err));
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error("Form submission error:", err);
+        navigate("/404", {
+          state: {
+            error: "There was an error submitting the form. Please try again.",
+          },
+        });
+      });
   };
 
   public render() {
@@ -60,7 +66,9 @@ class About extends Component<AboutProps> {
             </Col>
             <Col xs={12} md={6}>
               <Header size={2}>Drop me a line!</Header>
-              <Text>Fill in the fields below and I&apos;ll get back to you.</Text>
+              <Text>
+                Fill in the fields below and I&apos;ll get back to you.
+              </Text>
 
               <Formik
                 initialValues={{ name: "", email: "", details: "" }}
@@ -113,7 +121,7 @@ class About extends Component<AboutProps> {
                     >
                       Details
                     </FormField>
-                    <div data-netlify-recaptcha="true"></div>
+                    <div data-netlify-recaptcha="true" />
                     <Button
                       style={{ marginTop: "1rem", width: "100%" }}
                       type="submit"

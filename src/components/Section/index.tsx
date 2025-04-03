@@ -16,10 +16,12 @@ export const StyledSection = styled.div`
   }
 `;
 
-const Section = ({ children }: SectionProps) => (
-  <StyledSection>
-    <Container>{children}</Container>
-  </StyledSection>
-);
+function Section({ children }: SectionProps) {
+  return (
+    <StyledSection>
+      <Container>{children}</Container>
+    </StyledSection>
+  );
+}
 
 export default Section;

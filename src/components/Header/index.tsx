@@ -10,14 +10,14 @@ export const StyledHeader = styled.h1`
   font-family: ${font("heading")};
 `;
 
-const Header: React.SFC<HeaderProps> = ({ size, ...props }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ size, ...props }: HeaderProps) => {
   const Tag = `h${size}`;
 
   return <StyledHeader as={Tag as any} {...props} />;
 };
 
 Header.defaultProps = {
-  size: 1
+  size: 1,
 };
 
 export default Header;

@@ -25,28 +25,30 @@ const Flex = styled.div`
   }
 `;
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <Flex>
-      <Header>Not found :(</Header>
-      <p>
-        This page sadly does not exist. Here&apos;s a cute video of corgi
-        puppies to cheer you up:
-      </p>
-      <iframe
-        title="youtube-404-corgis"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/uglsVqR88l4"
+function NotFoundPage() {
+  return (
+    <Layout>
+      <SEO title="404: Not found" />
+      <Flex>
+        <Header>Not found :(</Header>
+        <p>
+          This page sadly does not exist. Here&apos;s a cute video of corgi
+          puppies to cheer you up:
+        </p>
+        <iframe
+          title="youtube-404-corgis"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/uglsVqR88l4"
         // @ts-ignore
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         // @ts-ignore
-        allowFullScreen
-      />
-    </Flex>
-  </Layout>
-);
+          allowFullScreen
+        />
+      </Flex>
+    </Layout>
+  );
+}
 
 export default NotFoundPage;

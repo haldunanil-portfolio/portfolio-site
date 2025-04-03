@@ -5,13 +5,13 @@
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+      "@typescript-eslint/parser": [".ts", ".tsx"],
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
   "rules": {
     "arrow-body-style": "off",
@@ -24,11 +24,20 @@
     "quotes": ["error", "double"],
     "react/jsx-filename-extension": [
       "error",
-      { "extensions": [".ts", ".tsx"] }
+      { "extensions": [".ts", ".tsx"] },
     ],
     "react/jsx-props-no-spreading": "off",
     "react/static-property-placement": "off",
     "react/state-in-constructor": "off",
+    "import/extensions": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
+    "no-undef": "off",
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-redeclare": "off",
+    "@typescript-eslint/no-redeclare": "error",
+    "class-methods-use-this": "off",
     "react/sort-comp": [
       "error",
       {
@@ -37,15 +46,22 @@
           "static-methods",
           "everything-else",
           "lifecycle",
-          "render"
-        ]
-      }
-    ]
+          "render",
+        ],
+      },
+    ],
   },
   "globals": {
     "fetch": false,
     "alert": false,
     "document": false,
-    "window": false
-  }
+    "window": false,
+    "HTMLElement": false,
+    "HTMLDivElement": false,
+    "HTMLButtonElement": false,
+    "HTMLSpanElement": false,
+    "HTMLAnchorElement": false,
+    "HTMLHeadingElement": false,
+    "React": false,
+  },
 }

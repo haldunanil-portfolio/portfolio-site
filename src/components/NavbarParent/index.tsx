@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink as RstrapNavLink,
-  NavLinkProps
+  NavLinkProps,
 } from "reactstrap";
 import styled, { css } from "styled-components";
 
@@ -41,7 +41,7 @@ const NavbarBrand = styled.div<NavbarBrandProps>`
   font-weight: 500;
   transition-duration: 0.25s;
   font-family: ${font("heading")};
-  color: ${props => props.color};
+  color: ${(props) => props.color};
 
   &:hover {
     text-decoration: none;
@@ -49,10 +49,12 @@ const NavbarBrand = styled.div<NavbarBrandProps>`
   }
 `;
 
-const NavbarToggler = styled(({ togglerStatus, ...props }) => (
-  <RstrapNavbarToggler {...props} />
-))`
-  ${props => (props.togglerStatus === "active"
+const NavbarToggler = styled(
+  ({ ...props }: { togglerStatus: string; [key: string]: any }) => (
+    <RstrapNavbarToggler {...props} />
+  ),
+)`
+  ${(props) => (props.togglerStatus === "active"
     ? css`
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#222' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
         `
@@ -75,7 +77,7 @@ const externalRe = /http[s]:\/\/.*/;
 
 class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
   public static defaultProps: NavbarParentProps = {
-    defaultIsTop: false
+    defaultIsTop: false,
   };
 
   private getNavLinkList = () => {
@@ -92,12 +94,12 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
           navProps = {
             tag: "a",
             target: "_blank",
-            href: navLink.href
+            href: navLink.href,
           };
         } else {
           navProps = {
             tag: Link,
-            to: navLink.href
+            to: navLink.href,
           };
         }
 
@@ -110,7 +112,7 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
               {...navProps}
               disabled={navLink.disabled}
               style={{
-                color: navLink.disabled ? null : navTextColor
+                color: navLink.disabled ? null : navTextColor,
               }}
             >
               {navLink.label}
@@ -125,12 +127,12 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
     if (condition) {
       this.setState({
         navbarBackground: "transparent",
-        navTextColor: "#ffffff"
+        navTextColor: "#ffffff",
       });
     } else {
       this.setState({
         navbarBackground: "rgb(51, 51, 51, 0.15)",
-        navTextColor: "#2D2C2D"
+        navTextColor: "#2D2C2D",
       });
     }
   };
@@ -138,8 +140,8 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
   private toggle = () => {
     const { isOpen } = this.state;
 
-    this.setState(prevState => ({
-      isOpen: !prevState.isOpen
+    this.setState((prevState) => ({
+      isOpen: !prevState.isOpen,
     }));
 
     // change styles as appropriate
@@ -151,7 +153,7 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
     // eslint-disable-next-line react/destructuring-assignment
     isTop: this.props.defaultIsTop as boolean,
     navbarBackground: "transparent",
-    navTextColor: "#ffffff"
+    navTextColor: "#ffffff",
   };
 
   public componentDidMount() {
@@ -199,7 +201,7 @@ class NavbarParent extends Component<NavbarParentProps, NavbarParentState> {
         fixed="top"
         expand="md"
         style={{
-          background: navbarBackground
+          background: navbarBackground,
         }}
       >
         <NavbarBrand as={Link} to="/" color={navTextColor as Color}>
